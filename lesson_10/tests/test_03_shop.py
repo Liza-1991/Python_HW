@@ -8,7 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from pages.shop_page import ShopPage
-import time
 
 
 @allure.feature("Корзина")
@@ -23,7 +22,7 @@ def test_shop_total():
 
     with allure.step("Открыть сайт"):
         main.open()
-        time.sleep(2)  # ждём загрузки страницы
+        # time.sleep(2)  ❌ удалено, т.к. ожидание уже встроено в метод open()
 
     with allure.step("Авторизоваться как standard_user"):
         main.login()
